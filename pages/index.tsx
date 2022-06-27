@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps">PWA</a> template.
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps">PWA</a> template
         </h1>
 
         <p className={styles.description}>
