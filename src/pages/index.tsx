@@ -1,9 +1,25 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useEffect, useState } from 'react'
+import { Card, CardData } from '../core/components/card'
+import styles from '../core/styles/Home.module.css'
 
 const Home: NextPage = () => {
+
+  const [cardData, setCardData] = useState<CardData[]>()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetch('/api/data')
+      .then(async (data) => { 
+        var value = await data.json() as CardData[]
+        setCardData(value)
+      })
+    }
+    fetchData()
+  },[])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,33 +39,11 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Next.js &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://www.typescriptlang.org/docs/" className={styles.card}>
-            <h2>Typescript &rarr;</h2>
-            <p>Find in-depth information about Typescript.</p>
-          </a>
-
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
-            className={styles.card}
-          >
-            <h2>Progressive Web Apps &rarr;</h2>
-            <p>Find in-depth information about progressive web applications.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your PWA to a public URL with Vercel.
-            </p>
-          </a>
+          {cardData?.map((data: CardData) => {
+            return(
+              <Card title={data.title} desc={data.desc} link={data.link} />
+            )
+          })}
         </div>
       </main>
 
