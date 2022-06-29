@@ -7,14 +7,14 @@ import styles from '../core/styles/Home.module.css'
 
 const Home: NextPage = () => {
 
-  const [cardData, setCardData] = useState<CardData[]>()
+  const [cardInfo, setCardInfo] = useState<CardData[]>()
 
   useEffect(() => {
     const fetchData = async () => {
       await fetch('/api/data')
       .then(async (data) => { 
         var value = await data.json() as CardData[]
-        setCardData(value)
+        setCardInfo(value)
       })
     }
     fetchData()
@@ -35,11 +35,11 @@ const Home: NextPage = () => {
 
         <p className={styles.description}>
           Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          <code className={styles.code}>src/pages/index.tsx</code>
         </p>
 
         <div className={styles.grid}>
-          {cardData?.map((data: CardData) => {
+          {cardInfo?.map((data: CardData) => {
             return(
               <Card title={data.title} desc={data.desc} link={data.link} />
             )

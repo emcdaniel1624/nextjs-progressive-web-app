@@ -7,7 +7,7 @@ export interface CardData {
   link: string
 }
 
-const Card = (props: CardData) => {
+export const Card = (props: CardData) => {
   return (
     <a href={props.link} className={styles.card}>
       <h2>{props.title} &rarr;</h2>
@@ -15,5 +15,3 @@ const Card = (props: CardData) => {
     </a>
   );
 }
-
-export {Card};
