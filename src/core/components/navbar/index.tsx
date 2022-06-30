@@ -1,25 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './navbar.module.css'
-import { MobileView, BrowserView, isMobile } from 'react-device-detect'
+import { MobileView, BrowserView } from 'react-device-detect'
+import Link from 'next/link'
 
-export interface Props {
-}
+export const NavBar = () => {
 
-export const NavBar = (props: Props) => {
-
-  useEffect(() => {
-    if(isMobile) {
-      console.log("Mobile View")
-    }
-    else {
-      console.log("Desktop View")
-    }
-  },[])
+  const [activeTabs, setActiveTabs] = useState('home')
 
   return (
     <div>
-      <MobileView className={styles.container}>Mobile View</MobileView>
-      <BrowserView className={styles.container}>Desktop View</BrowserView>
+      <MobileView className={styles.mobileContainer}>Mobile View
+          
+      </MobileView>
+      <BrowserView className={styles.desktopContainer}>Desktop View
+      
+      </BrowserView>
     </div>
   )
 }
