@@ -1,13 +1,13 @@
 .mobileContainer {
-    width: 84%;
+    width: 90%;
     height: 18%;
     background-color: darkcyan;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     justify-content: space-evenly;
     align-items: center;
     display: flex;
-    border-radius: 30;
+    border-radius: 30%;
     margin-left: 12;
     margin-right: 12;
     margin-bottom: 20;
