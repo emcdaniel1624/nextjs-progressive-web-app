@@ -1,7 +1,9 @@
 import React from 'react';
+import internal from 'stream';
 import styles from './card.module.css';
 
 export interface CardData {
+  id?: number,
   title: string,
   desc: string,
   link: string
