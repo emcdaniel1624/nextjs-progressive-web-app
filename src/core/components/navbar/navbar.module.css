@@ -1,16 +1,16 @@
 .mobileContainer {
     width: 95%;
-    height: 10%;
+    height: 12%;
     background-color: darkcyan;
     position: fixed;
     bottom: 0;
     justify-content: space-evenly;
     align-items: center;
     display: flex;
-    border-radius: 30px;
+    border-radius: 32px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 3%;
+    bottom: 2%;
 }
 
 .desktopContainer {
