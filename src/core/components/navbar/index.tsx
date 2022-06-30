@@ -10,7 +10,19 @@ export const NavBar = () => {
   return (
     <div>
       <MobileView className={styles.mobileContainer}>Mobile View
-          
+        <div className={styles.bnTab} onClick={() => setActiveTabs('home')}>
+            {activeTabs === 'home' ?
+              <Link href='/'>
+                <a style={{color:'white'}}>
+                  Home
+                </a>
+              </Link> :
+              <Link href='/'>
+                <a style={{color:'#949494'}}>
+                  Home
+                </a>
+              </Link>}
+        </div>
       </MobileView>
       <BrowserView className={styles.desktopContainer}>Desktop View
       
