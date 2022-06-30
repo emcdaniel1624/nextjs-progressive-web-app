@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styles from './navbar.module.css'
-import isMobile from 'react-device-detect'
+import { MobileView, BrowserView, isMobile } from 'react-device-detect'
 
 export interface Props {
 }
@@ -17,6 +17,9 @@ export const NavBar = (props: Props) => {
   },[])
 
   return (
-    <div className={styles.container}>NavBar Component</div>
+    <div>
+      <MobileView className={styles.container}>Mobile View</MobileView>
+      <BrowserView className={styles.container}>Desktop View</BrowserView>
+    </div>
   )
 }
