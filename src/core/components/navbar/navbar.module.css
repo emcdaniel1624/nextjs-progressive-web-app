@@ -3,11 +3,12 @@
     height: 18%;
     background-color: darkcyan;
     position: fixed;
-    bottom: 20;
+    bottom: 0;
     justify-content: space-evenly;
     align-items: center;
     display: flex;
     border-radius: 38%;
+    margin: auto;
 }
 
 .desktopContainer {
