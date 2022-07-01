@@ -1,15 +1,10 @@
+import { CardDataDto } from './../../shared/models/CardDataDto';
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  title: string,
-  desc: string,
-  link: string
-}
-
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data[]>
+  res: NextApiResponse<CardDataDto[]>
 ) {
   res.status(200).json([
     {

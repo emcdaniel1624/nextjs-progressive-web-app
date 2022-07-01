@@ -1,14 +1,16 @@
-import '../core/styles/globals.css'
+import '../shared/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { NavBar } from '../core/components'
+import { NavBar } from '../shared/components'
+import { useState } from 'react'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <NavBar></NavBar>
-      <Component {...pageProps} />
-    </>
-  )
+function App({ Component, pageProps }: AppProps) {
+
+  const [loading, setLoading] = useState(true)
+  
+  return (<>
+    <NavBar/>
+    <Component {...pageProps} />
+  </>)
 }
 
-export default MyApp
+export default App
