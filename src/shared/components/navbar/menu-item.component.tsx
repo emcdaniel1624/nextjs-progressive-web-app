@@ -1,14 +1,13 @@
 import Link from "next/link"
 import { MobileView, BrowserView } from "react-device-detect"
-import { MenuItemDTO } from "../../models"
-import styles from "./navbar.module.css"
+import { MenuItemModel } from "../../models"
 type Props = {
-    item: MenuItemDTO,
+    item: MenuItemModel,
     activeTab: string
 }
 
 //Google icons for mobile
-export const MenuItem = (props:Props) => {
+export const MenuItemComponent = (props:Props) => {
 
     const activeTab = props.activeTab
     const item = props.item

@@ -2,20 +2,20 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { Card } from '../shared/components'
+import { CardComponent } from '../shared/components'
 import styles from '../shared/styles/Home.module.css'
 import { ApiRouteCardData } from '../shared/constants'
-import { CardDataDto } from '../shared/models'
+import { CardDataModel } from '../shared/models'
 
 const Home: NextPage = () => {
 
-  const [cardInfo, setCardInfo] = useState<CardDataDto[]>()
+  const [cardInfo, setCardInfo] = useState<CardDataModel[]>()
 
   useEffect(() => {
     const fetchData = async () => {
       await fetch(ApiRouteCardData)
       .then(async (data) => { 
-        var value = await data.json() as CardDataDto[]
+        var value = await data.json() as CardDataModel[]
         setCardInfo(value)
       })
     }
@@ -41,9 +41,9 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          {cardInfo?.map((data: CardDataDto) => {
+          {cardInfo?.map((data: CardDataModel) => {
             return(
-              <Card key={data.id} title={data.title} desc={data.desc} link={data.link} />
+              <CardComponent key={data.id} title={data.title} desc={data.desc} link={data.link} />
             )
           })}
         </div>

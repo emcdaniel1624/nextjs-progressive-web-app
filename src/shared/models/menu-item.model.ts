@@ -1,4 +1,4 @@
-export interface MenuItemDTO {
+export interface MenuItemModel {
     id?: number
     route: string
     name: string

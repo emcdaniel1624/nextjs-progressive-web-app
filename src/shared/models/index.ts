@@ -1,2 +1,2 @@
-export * from "./MenuItemDto"
-export * from "./CardDataDto"
+export * from "./menu-item.model"
+export * from "./card-data.model"
