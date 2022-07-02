@@ -22,8 +22,7 @@ export const NavBarComponent = () => {
     fetchData()
   },[])
 
-  return (
-    <div>
+  return (<>
       <MobileView className={styles.mobileContainer}>
         {menuItems?.map((item:MenuItemModel) => {
           return (<>
@@ -42,6 +41,5 @@ export const NavBarComponent = () => {
           </>)
         })}
       </BrowserView>
-    </div>
-  )
+    </>)
 }
