@@ -26,22 +26,22 @@ export const NavBarComponent = () => {
       <MobileView>
         <div className={styles.mobileContainer}>
           {menuItems?.map((item:MenuItemModel) => {
-            return (<>
+            return (
               <div className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
                 <MenuItemComponent item={item} activeTab={activeTab}/>
               </div>
-            </>)
+            )
           })}
         </div>
       </MobileView>
       <BrowserView>
         <div className={styles.desktopContainer}>
           {menuItems?.map((item:MenuItemModel) => {
-            return (<>
+            return (
               <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
                 <MenuItemComponent item={item} activeTab={activeTab}/>
               </div>
-            </>)
+            )
           })}
         </div>
       </BrowserView>
