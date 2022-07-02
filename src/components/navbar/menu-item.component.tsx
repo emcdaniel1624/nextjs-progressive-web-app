@@ -19,14 +19,14 @@ export const MenuItemComponent = (props:Props) => {
       <MobileView>
         {activeTab === item.route ?
           <Link href={item.route}>
-            <span className={styles.materialicons} style={{color:'white'}}>
+            <div className={styles.materialicons} style={{color:'white'}}>
               {item.mobileIcon}
-            </span>
+            </div>
           </Link> :
           <Link href={item.route}>
-            <span className={styles.materialicons} style={{color:'#949494'}}>
+            <div className={styles.materialicons} style={{color:'#949494'}}>
               {item.mobileIcon}
-            </span>
+            </div>
           </Link>}
       </MobileView>
       <BrowserView>

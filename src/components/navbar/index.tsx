@@ -23,8 +23,7 @@ export const NavBarComponent = () => {
   },[])
 
   return (<>
-      <MobileView>
-        <div className={styles.mobileContainer}>
+      <MobileView className={styles.mobileContainer}>
           {menuItems?.map((item:MenuItemModel) => {
             return (
               <div className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
@@ -32,10 +31,8 @@ export const NavBarComponent = () => {
               </div>
             )
           })}
-        </div>
       </MobileView>
-      <BrowserView>
-        <div className={styles.desktopContainer}>
+      <BrowserView className={styles.desktopContainer}>
           {menuItems?.map((item:MenuItemModel) => {
             return (
               <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
@@ -43,7 +40,6 @@ export const NavBarComponent = () => {
               </div>
             )
           })}
-        </div>
       </BrowserView>
     </>)
 }
