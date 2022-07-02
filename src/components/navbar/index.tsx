@@ -23,23 +23,27 @@ export const NavBarComponent = () => {
   },[])
 
   return (<>
-      <MobileView className={styles.mobileContainer}>
-        {menuItems?.map((item:MenuItemModel) => {
-          return (<>
-            <div className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
-              <MenuItemComponent item={item} activeTab={activeTab}/>
-            </div>
-          </>)
-        })}
+      <MobileView>
+        <div className={styles.mobileContainer}>
+          {menuItems?.map((item:MenuItemModel) => {
+            return (<>
+              <div className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
+                <MenuItemComponent item={item} activeTab={activeTab}/>
+              </div>
+            </>)
+          })}
+        </div>
       </MobileView>
-      <BrowserView className={styles.desktopContainer}>
-        {menuItems?.map((item:MenuItemModel) => {
-          return (<>
-            <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
-              <MenuItemComponent item={item} activeTab={activeTab}/>
-            </div>
-          </>)
-        })}
+      <BrowserView>
+        <div className={styles.desktopContainer}>
+          {menuItems?.map((item:MenuItemModel) => {
+            return (<>
+              <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
+                <MenuItemComponent item={item} activeTab={activeTab}/>
+              </div>
+            </>)
+          })}
+        </div>
       </BrowserView>
     </>)
 }
