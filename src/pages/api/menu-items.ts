@@ -1,4 +1,4 @@
-import { MenuItemModel } from '../../shared/models/menu-item.model';
+import { MenuItemModel } from '../../generic/models/menu-item.model';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default function handler(
@@ -8,13 +8,13 @@ export default function handler(
   res.status(200).json([
     {
       name:"Home",
-      route:"/home",
+      route:"/",
       mobileIcon:"home"
     },
     {
       name:"About",
       route:"/about",
-      mobileIcon:"about"
+      mobileIcon:"info"
     },
   ])
 }

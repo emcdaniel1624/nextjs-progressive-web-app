@@ -1,6 +1,6 @@
-import '../shared/styles/globals.css'
+import '../generic/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { NavBarComponent } from '../shared/components'
+import { NavBarComponent } from '../components'
 import { useState } from 'react'
 
 function App({ Component, pageProps }: AppProps) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import internal from 'stream';
-import { CardDataModel } from '../../models/card-data.model';
+import { CardDataModel } from '../../generic/models/card-data.model';
 import styles from './card.module.css';
 
 

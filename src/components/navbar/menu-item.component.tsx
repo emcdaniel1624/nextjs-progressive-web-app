@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { MobileView, BrowserView } from "react-device-detect"
-import { MenuItemModel } from "../../models"
+import { MenuItemModel } from "../../generic/models"
+import styles from "./navbar.module.css"
+
 type Props = {
     item: MenuItemModel,
     activeTab: string
@@ -17,8 +19,14 @@ export const MenuItemComponent = (props:Props) => {
       <MobileView>
         {activeTab === item.route ?
           <Link href={item.route}>
+            <span className={styles.materialicons} style={{color:'white'}}>
+              {item.mobileIcon}
+            </span>
           </Link> :
           <Link href={item.route}>
+            <span className={styles.materialicons} style={{color:'#949494'}}>
+              {item.mobileIcon}
+            </span>
           </Link>}
       </MobileView>
       <BrowserView>

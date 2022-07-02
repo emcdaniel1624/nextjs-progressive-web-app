@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styles from './navbar.module.css'
 import { MobileView, BrowserView } from 'react-device-detect'
-import { MenuItemModel } from '../../models'
+import { MenuItemModel } from '../../generic/models'
 import { MenuItemComponent } from './menu-item.component'
-import { ApiRouteMenuItems, PageRoutes } from '../../constants'
+import { ApiRouteMenuItems, PageRoutes } from '../../generic/constants'
 
 export const NavBarComponent = () => {
 
@@ -11,6 +11,7 @@ export const NavBarComponent = () => {
   const [ menuItems, setMenuItems] = useState<MenuItemModel[]>()
 
   useEffect(() => {
+
     const fetchData = async () => {
       await fetch(ApiRouteMenuItems)
       .then(async (data) => { 

@@ -1,4 +1,4 @@
-import { CardDataModel } from '../../shared/models/card-data.model';
+import { CardDataModel } from '../../generic/models/card-data.model';
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 

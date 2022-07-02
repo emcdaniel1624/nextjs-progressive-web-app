@@ -2,10 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { CardComponent } from '../shared/components'
-import styles from '../shared/styles/Home.module.css'
-import { ApiRouteCardData } from '../shared/constants'
-import { CardDataModel } from '../shared/models'
+import { CardComponent } from '../components'
+import styles from '../generic/styles/Home.module.css'
+import { ApiRouteCardData } from '../generic/constants'
+import { CardDataModel } from '../generic/models'
 
 const Home: NextPage = () => {
 
