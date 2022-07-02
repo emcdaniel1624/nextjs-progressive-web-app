@@ -7,11 +7,13 @@ export default function handler(
 ) {
   res.status(200).json([
     {
+      id: 1,
       name:"Home",
       route:"/",
       mobileIcon:"home"
     },
     {
+      id: 2,
       name:"About",
       route:"/about",
       mobileIcon:"info"

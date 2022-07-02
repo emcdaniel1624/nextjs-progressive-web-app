@@ -26,7 +26,7 @@ export const NavBarComponent = () => {
       <MobileView className={styles.mobileContainer}>
           {menuItems?.map((item:MenuItemModel) => {
             return (
-              <div className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
+              <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
                 <MenuItemComponent item={item} activeTab={activeTab}/>
               </div>
             )
