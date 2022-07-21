@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './navbar.module.css'
-import { MobileView, BrowserView } from 'react-device-detect'
+import { MobileView, BrowserView, isMobile } from 'react-device-detect'
 import { MenuItemModel } from '../../generic/models'
 import { MenuItemComponent } from './menu-item.component'
 import { ApiRouteMenuItems, PageRoutes } from '../../generic/constants'
@@ -23,27 +23,24 @@ export const NavBarComponent = () => {
   },[])
 
   return (<>
-      <MobileView>
-        <div className={styles.mobileContainer}>
-          {menuItems?.map((item:MenuItemModel) => {
-              return (
-                <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
-                  <MenuItemComponent item={item} activeTab={activeTab}/>
-                </div>
-              )
-            })}
+    {isMobile ? 
+    <div className={styles.mobileContainer}>
+      {menuItems?.map((item:MenuItemModel) => {
+          return (
+            <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
+              <MenuItemComponent item={item} activeTab={activeTab}/>
+            </div>
+          )
+        })}
+    </div> :
+    <div className={styles.desktopContainer}>
+      {menuItems?.map((item:MenuItemModel) => {
+      return (
+        <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
+          <MenuItemComponent item={item} activeTab={activeTab}/>
         </div>
-      </MobileView>
-      <BrowserView>
-        <div className={styles.desktopContainer}>
-          {menuItems?.map((item:MenuItemModel) => {
-              return (
-                <div key={item.id} className={styles.menuItem} onClick={() => setActiveTabs(item.route)}>
-                  <MenuItemComponent item={item} activeTab={activeTab}/>
-                </div>
-              )
-            })}
-        </div>
-      </BrowserView>
-    </>)
+      )
+    })}
+    </div>}
+  </>)
 }

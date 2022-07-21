@@ -8,7 +8,6 @@ type Props = {
     activeTab: string
 }
 
-//Google icons for mobile
 export const MenuItemComponent = (props:Props) => {
 
     const activeTab = props.activeTab
