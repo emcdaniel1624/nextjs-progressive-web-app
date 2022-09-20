@@ -1,25 +1,19 @@
-This is a project template for a Progressive Web Application built with the Nextjs framework and typescript.
+# Progressive Web App Template with NEXTjs
 
-## Getting Started
+This repository is a base progressive web app template written in NEXT.js
 
-To get started, run the nextjs development server with
+Progressive Web Apps (PWAs) are web apps that use service workers, manifests, and other web-platform features in combination with progressive enhancement to give users an experience on par with native apps.
 
+In short, a PWA is a web app that can be downloaded to a device and run natively
+
+
+## Usage
+
+Clone the repository then run
+```javascript
+npm install
 npm run dev
-# or
-yarn dev
-
-Open http://localhost:3000 with your browser to view the project.
-
-You can start editing the page by modifying `src/pages/index.tsx`.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
 ## Deploy on Vercel
 
