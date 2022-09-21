@@ -1,6 +1,7 @@
 # Progressive Web App Template with NEXTjs
 
-This repository is a base progressive web app template written in NEXT.js
+This repository is a base progressive web app template written in NEXT.js. The project features a dynamic database driven navigation bar. Not only can this nav bar be added to by simply adding to your database, The nav bar also adjusts to the type of device it is being accessed on in order to keep a clean UI
+(Currently the menu item api route only returns raw hard coded json data, but connect this to a database for a dynamic database driven nav bar!)
 
 Progressive Web Apps (PWAs) are web apps that use service workers, manifests, and other web-platform features in combination with progressive enhancement to give users an experience on par with native apps.
 
